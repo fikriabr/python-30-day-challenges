@@ -1,0 +1,22 @@
+# Create
+curl -X POST http://127.0.0.1:5000/tasks/ \
+-H "Content-Type: application/json" \
+-d '{"title": "Belajar Flask", "description": "CRUD API", "is_done": false}'
+
+curl -X POST http://127.0.0.1:5000/tasks/ \
+-H "Content-Type: application/json" \
+-d '{"title": "Belajar Flask 2", "description": "CRUD API", "is_done": false}'
+
+# Get All
+curl http://127.0.0.1:5000/tasks/
+
+# Get by ID
+curl http://127.0.0.1:5000/tasks/1
+
+# Update
+curl -X PUT http://127.0.0.1:5000/tasks/1 \
+-H "Content-Type: application/json" \
+-d '{"title": "Update Judul", "is_done": true}'
+
+# Delete
+curl -X DELETE http://127.0.0.1:5000/tasks/2
