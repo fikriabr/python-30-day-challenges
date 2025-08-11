@@ -22,7 +22,7 @@ def get_tasks():
 
 
 def get_task(task_id):
-  task = task_service.get_task_by_id(task_id)
+  task = task_service.get_task(task_id)
   if not task:
     return jsonify({"error": "Task not found"}), 404
   return jsonify({
