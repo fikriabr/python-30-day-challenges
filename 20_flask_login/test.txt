@@ -1,0 +1,54 @@
+# run command (not using migrate)
+flask run
+
+# Register User
+curl -X POST http://127.0.0.1:5000/auth/register \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "fikri",
+    "email": "fikri@example.com",
+    "password": "rahasia123"
+}'
+
+# login
+curl -X POST http://127.0.0.1:5000/auth/login \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "fikri",
+    "password": "rahasia123"
+}' \
+-c cookies.txt
+
+# profile
+curl -X GET http://127.0.0.1:5000/auth/profile \
+-b cookies.txt
+
+# logout
+curl -X POST http://127.0.0.1:5000/auth/logout \
+-b cookies.txt
+
+# Register User
+curl -X POST http://127.0.0.1:5000/auth/register \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "lay",
+    "email": "lay@example.com",
+    "password": "lay123"
+}'
+
+# login
+curl -X POST http://127.0.0.1:5000/auth/login \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "lay",
+    "password": "lay123"
+}' \
+-c cookies-b.txt
+
+# profile
+curl -X GET http://127.0.0.1:5000/auth/profile \
+-b cookies-b.txt
+
+# logout
+curl -X POST http://127.0.0.1:5000/auth/logout \
+-b cookies-b.txt
