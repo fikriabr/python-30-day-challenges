@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Welcome, {{ current_user.username }}!</h2>
+    <a href="{{ url_for('post.create') }}">Create new post</a>
+    <hr>
+    {% for post in posts %}
+        <article>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <small>Posted on {{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            <div>
+                <a href="{{ url_for('post.update', post_id=post.id) }}">Edit</a>
+                <form action="{{ url_for('post.delete', post_id=post.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
