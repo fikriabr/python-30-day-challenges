@@ -1,7 +1,7 @@
-Python 30 Day Challenges
+Python Challenges
 
 Description:
-This project contains a collection of Python programming challenges for 30 days. The goal is to improve my coding skills through daily practice and problem solving.
+This project contains a collection of Python programming challenges. The goal is to improve my coding skills through daily practice and problem solving.
 
 Instructions:
 1. Clone this repository.
